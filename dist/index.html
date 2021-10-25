@@ -12,9 +12,9 @@
     <div class="input-group-prepend">
       <span class="input-group-text" id="basic-addon1">待辦事項</span>
     </div>
-    <input type="text" class="form-control" placeholder="準備要做的任務">
+    <input type="text" class="form-control" placeholder="準備要做的任務" v-model="newTodo">
     <div class="input-group-append">
-      <button class="btn btn-primary" type="button">新增</button>
+      <button class="btn btn-primary" type="button" @click="addTodo">新增</button>
     </div>
   </div>
   <div class="card text-center">
@@ -32,7 +32,7 @@
       </ul>
     </div>
     <ul class="list-group list-group-flush text-left">
-      <li class="list-group-item" >
+      <li class="list-group-item" v-for="item in todos">
         <div class="d-flex">
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="a1">
@@ -70,5 +70,23 @@
 </div>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js'></script>
+  <script>
+    var vue = new Vue({
+      el:'#app',
+      data(){
+        return{
+          todos:[],
+          newTodo: ''
+        }
+  
+      },
+      methods: {
+      addTodo(){
+        
+      }
+    },
+    })
+
+  </script>
 </body>
 </html>
